@@ -1,0 +1,111 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "API定義書",
+    "description": "express-openapiを試すための定義書",
+    "version": "0.1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/user": {
+      "get": {
+        "summary": "ユーザー取得API",
+        "description": "ユーザー情報を取得するAPI",
+        "operationId": "getUser",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "取得に成功した場合",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "name"
+                  ],
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user_with_parameter": {
+      "get": {
+        "summary": "ユーザー取得API",
+        "description": "ユーザー情報を取得するAPI",
+        "operationId": "getUserWithParameter",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "hatano"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "取得に成功した場合",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "name"
+                  ],
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user_with_validation_result": {
+      "get": {
+        "summary": "ユーザー取得API",
+        "description": "ユーザー情報を取得するAPI",
+        "operationId": "getUserValidationResult",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "取得に成功した場合",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "name"
+                  ],
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

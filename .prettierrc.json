@@ -1,0 +1,21 @@
+{
+  "trailingComma": "none",
+  "tabWidth": 4,
+  "useTabs": false,
+  "overrides": [
+    {
+      "files": ["*.{js,ts,jsx,tsx}"],
+      "options": {
+        "useTabs": true,
+        "arrowParens": "avoid"
+      }
+    },
+    {
+      "files": ["*.json"],
+      "options": {
+        "tabWidth": 2,
+        "singleQuote": true
+      }
+    }
+  ]
+}
